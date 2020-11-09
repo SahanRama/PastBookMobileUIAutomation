@@ -1,8 +1,9 @@
 package com.pastbook.qa.mobile.pages;
 
+import com.pastbook.qa.mobile.util.BaseUtil;
 import org.openqa.selenium.By;
 
-public class PasswordPage extends BasePage{
+public class PasswordPage extends BaseUtil {
     private By lblHeader = By.xpath("//h2");
     private By txtBoxNewPassword = By.xpath("//input[@name='user[password]']");
     private By txtBoxConfirmPassword = By.xpath("//input[@name='user[passwordConfirm]']");

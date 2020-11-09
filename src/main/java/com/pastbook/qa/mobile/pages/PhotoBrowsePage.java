@@ -1,8 +1,9 @@
 package com.pastbook.qa.mobile.pages;
 
+import com.pastbook.qa.mobile.util.BaseUtil;
 import org.openqa.selenium.By;
 
-public class PreviewPage extends BasePage{
+public class PhotoBrowsePage extends BaseUtil {
     private By btnOpenBook = By.xpath("//button[text()='Open your book']");
     private By lblTitleOfAlbum = By.xpath("//div[@class='title']");
     private By lblWelcomeBack = By.xpath("//div[contains(text(),'Welcome back!')]");

@@ -15,7 +15,7 @@ public class SignInTest extends BaseTest {
         softAssert.assertTrue(newToSystemMessage.contains("Hey! It seems you have not created any PastBook yet, go ahead!"),"Welcome new user message is incorrect");
         CreatePassBook.createAPassBook("Bikes");
         UploadPhotos.uploadPhotos();
-        softAssert.assertEquals(Preview.getTitleOfPastBook(),"Bikes", "Past Book Title Mismatch ");
+        softAssert.assertEquals(PhotoBrowse.getTitleOfPastBook(),"Bikes", "Past Book Title Mismatch ");
         HomePage.navigateToProfilePage();
         softAssert.assertEquals(Profile.getHeaderText(), "Update your Profile","Profile Page Header mismatch");
         Profile.changeFirstNameAndLastName("Johny","Doe");
@@ -26,7 +26,7 @@ public class SignInTest extends BaseTest {
         HomePage.signOutFromApplication();
         HomePage.navigateToSignInPopUp();
         SignIn.submitUsernameAndPasswordAndLogin(email,"test123");
-        softAssert.assertEquals(Preview.getTitleOfPastBook(), "Bikes", "Past Book Title Mismatch ");
+        softAssert.assertEquals(PhotoBrowse.getTitleOfPastBook(), "Bikes", "Past Book Title Mismatch ");
         softAssert.assertAll();
         HomePage.signOutFromApplication();
     }
@@ -45,8 +45,8 @@ public class SignInTest extends BaseTest {
     public void verifySuccessfulLoginWithValidCredentials(){
         HomePage.navigateToSignInPopUp();
         SignIn.submitUsernameAndPasswordAndLogin("Johny449@mailinator.com","test123");
-        softAssert.assertTrue(Preview.verifyOpenYouBookButtonIsDisplayed(), "Open Your Book Button is not displayed");
-        softAssert.assertEquals(Preview.getTitleOfPastBook(),"Bikes", "Past Book Title Mismatch ");
+        softAssert.assertTrue(PhotoBrowse.verifyOpenYouBookButtonIsDisplayed(), "Open Your Book Button is not displayed");
+        softAssert.assertEquals(PhotoBrowse.getTitleOfPastBook(),"Bikes", "Past Book Title Mismatch ");
         softAssert.assertAll();
         HomePage.signOutFromApplication();
     }
@@ -67,8 +67,8 @@ public class SignInTest extends BaseTest {
     @Test(priority = 4)
     public void verifySuccessfulLoginWithFaceBookLogin(){
         HomePage.navigateToSignInPopUp();
-        SignIn.loginWithFaceBook("ryandexter93@gmail.com","n97sahan");
-        softAssert.assertEquals(Preview.getTitleOfPastBook(), "Bikes", "Past Book Title Mismatch ");
+        SignIn.loginWithFaceBook("garfieldrankin2020@gmail.com","Fkgdshk#$%#$dfssdkfha");
+        softAssert.assertEquals(PhotoBrowse.getTitleOfPastBook(), "Facebook Moments", "Past Book Title Mismatch ");
         softAssert.assertAll();
         HomePage.signOutFromApplication();
     }

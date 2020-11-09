@@ -1,17 +1,18 @@
 package com.pastbook.qa.mobile.pages;
 
+import com.pastbook.qa.mobile.util.BaseUtil;
 import org.openqa.selenium.By;
 
-public class SignInPage extends BasePage {
+public class SignInPage extends BaseUtil {
     private By linkUseEmail = By.xpath("//a[text()='or use email »']");
     private By linkConnectFaceBook = By.xpath("//a[text()='Connect with Facebook']");
     private By txtBoxEmail = By.xpath("//input[@name='email']");
     private By txtBoxPassword = By.xpath("//input[@name='password']");
     private By buttonSubmit = By.xpath("//button[@type='submit']");
     private By lblErrorMessage = By.xpath("//*[@id='message-wrong-password']");
-    private By txtBoxfacebookEmail = By.xpath("//*[@id='email']");
-    private By txtBoxfacebookPassword = By.xpath("//*[@id='pass']");
-    private By btnFBLogin = By.xpath("//*[@id='loginbutton']");
+    private By txtBoxfacebookEmail = By.xpath("//*[@name='email']");
+    private By txtBoxfacebookPassword = By.xpath("//*[@name='pass']");
+    private By btnFBLogin = By.xpath("//*[@name='login']");
 
     public void clickUserEmailLink() {
         waitForElement(linkUseEmail,10);
@@ -34,7 +35,7 @@ public class SignInPage extends BasePage {
         waitForSeconds(3);
     }
     public void clickConnectWithFacebookLink(){
-        waitForElement(linkConnectFaceBook,10);
+        waitForElement(linkConnectFaceBook,60);
         driver.findElement(linkConnectFaceBook).click();
     }
 

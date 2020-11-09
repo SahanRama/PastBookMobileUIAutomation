@@ -1,8 +1,9 @@
 package com.pastbook.qa.mobile.pages;
 
+import com.pastbook.qa.mobile.util.BaseUtil;
 import org.openqa.selenium.By;
 
-public class CreatePassBookPage extends BasePage {
+public class CreatePassBookPage extends BaseUtil {
     private By lblWelcomeMessage = By.xpath("//div[@class='content alert alert-dismissable alert-success']");
     private By headerText = By.xpath("//h1");
     private By txtBoxTitleName =By.xpath("//input[@name='title']");

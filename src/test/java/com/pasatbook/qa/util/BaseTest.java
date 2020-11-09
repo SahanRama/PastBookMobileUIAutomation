@@ -1,9 +1,8 @@
 package com.pasatbook.qa.util;
 
-import com.pastbook.qa.mobile.functions.Base;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.BeforeMethod;
+import com.pastbook.qa.mobile.common.Base;
+import com.pastbook.qa.mobile.util.BaseUtil;
+import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
 public class BaseTest {
@@ -28,5 +27,14 @@ public class BaseTest {
     @BeforeGroups("EmailGenerate")
     public void emailGenerate() {
         this.email = Base.generateEmail();
+    }
+
+    @AfterMethod
+    public void navigateToHome(){
+        Base.navigateToHomePage();
+    }
+    @AfterSuite
+    public void closeBrowser(){
+        Base.tearDown();
     }
 }

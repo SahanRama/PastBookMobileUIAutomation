@@ -1,19 +1,19 @@
-package com.pastbook.qa.mobile.functions;
+package com.pastbook.qa.mobile.common;
 
-import com.pastbook.qa.mobile.pages.BasePage;
+import com.pastbook.qa.mobile.util.BaseUtil;
 
 import java.util.Random;
 
 public class Base {
-private static BasePage basePage =new BasePage();
+private static BaseUtil baseUtil =new BaseUtil();
 
     private Base(){}
 
     public static void openBrowser() {
-        basePage.loadBrowser();
+        baseUtil.loadBrowser();
     }
     public static void navigateToHomePage() {
-        basePage.navigateToHomePage();
+        baseUtil.navigateToHomePage();
     }
 
     public static String generateEmail(){
@@ -21,6 +21,10 @@ private static BasePage basePage =new BasePage();
         int randomInt = randomGenerator.nextInt(1000);
         String email = "Johnie"+ randomInt +"@mailinator.com";
         return email;
+    }
+
+    public static void tearDown(){
+        baseUtil.tearDown();
     }
 
 
