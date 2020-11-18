@@ -16,6 +16,13 @@ private static BaseUtil baseUtil =new BaseUtil();
         baseUtil.navigateToHomePage();
     }
 
+    public static void startApplitools(){
+        baseUtil.startApplitools();
+    }
+    public static void closeApplitools(){
+        baseUtil.closeApplitools();
+    }
+
     public static String generateEmail(){
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(1000);

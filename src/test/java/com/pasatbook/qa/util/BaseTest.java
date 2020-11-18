@@ -29,12 +29,22 @@ public class BaseTest {
         this.email = Base.generateEmail();
     }
 
+    @BeforeGroups("VisualTest")
+    public void startApplitools() {
+        Base.startApplitools();
+    }
+    @AfterGroups("VisualTest")
+    public void closeApplitools(){
+        Base.closeApplitools();
+    }
+
     @AfterMethod
-    public void navigateToHome(){
+    public void navigateToHome() {
         Base.navigateToHomePage();
     }
+
     @AfterSuite
-    public void closeBrowser(){
+    public void closeBrowser() {
         Base.tearDown();
     }
 }

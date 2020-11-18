@@ -69,6 +69,8 @@ public class HomePage {
     public static boolean isSignInLinkDisplay() {
         return homePagePage.isSignInLinkDisplay();
     }
+    public static void isHomePageProperlyDisplay(){homePagePage.isHomePageProperlyDisplay();}
+    public static void isMainMenuProperlyDisplay(){homePagePage.isMainMenuProperlyDisplay();}
 
 
 

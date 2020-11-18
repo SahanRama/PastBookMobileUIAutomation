@@ -47,6 +47,7 @@ public class HomePagePage extends BaseUtil {
         return driver.findElement(header).getText();
     }
 
+
     //Verification points
     public boolean isStartNowButtonDisplay() {
         waitForElement(buttonStartNow,10);
@@ -91,6 +92,15 @@ public class HomePagePage extends BaseUtil {
     public boolean isSignInLinkDisplay() {
         waitForElement(linkSignin,10);
         return isElementDisplayed(linkSignin);
+    }
+
+    public void isHomePageProperlyDisplay(){
+        waitForElement(buttonHamburger,10);
+        eyes.checkWindow("Home-Page");
+    }
+    public void isMainMenuProperlyDisplay(){
+        waitForElement(linkHome,10);
+        eyes.checkWindow("Main-Menu");
     }
 
 

@@ -24,9 +24,7 @@ import java.util.concurrent.TimeUnit;
 public class BaseUtil {
     protected static AppiumDriver driver;
     private static String  mainWindow;
-    Eyes eyes;
-
-
+    protected static Eyes eyes;
 
     public void loadBrowser(){
 
@@ -41,7 +39,7 @@ public class BaseUtil {
             capabilities.setCapability(CapabilityType.VERSION, "9.0");
         }
         else {
-            capabilities.setCapability("deviceName", "iPhone 8");
+            capabilities.setCapability("deviceName", "iPhone 11");
             capabilities.setCapability("platformName", "iOS");
             capabilities.setCapability("platformVersion", "14.1");
             capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
@@ -75,11 +73,21 @@ public class BaseUtil {
 
             }
         }
-        // Initialize the Eyes SDK with our API key (set it as an environment variable)
+
+
+    }
+
+    public  void startApplitools(){
+        // Initialize the Eyes SDK with our API key
         eyes = new Eyes();
         eyes.setLogHandler(new StdoutLogHandler());
         eyes.setApiKey(Constants.APPLITOOLS_API_KEY);
 
+        eyes.setForceFullPageScreenshot(true);
+        eyes.open(driver,"PastBook", "UI_Mobile_Test");
+    }
+    public void closeApplitools(){
+        eyes.close();
     }
 
 
